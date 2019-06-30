@@ -1,0 +1,13 @@
+﻿  ball.cpp
+c:\users\alexa\source\repos\firstsfml\firstsfml\ball.cpp(9): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\alexa\source\repos\firstsfml\firstsfml\ball.cpp(16): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\alexa\source\repos\firstsfml\firstsfml\ball.cpp(17): warning C4305: 'argument': truncation from 'double' to 'T'
+          with
+          [
+              T=float
+          ]
+  FirstSFML.vcxproj -> C:\Users\Alexa\source\repos\FirstSFML\Debug\FirstSFML.exe
