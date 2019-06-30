@@ -1,13 +1,11 @@
-﻿  ball.cpp
-c:\users\alexa\source\repos\firstsfml\firstsfml\ball.cpp(9): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\alexa\source\repos\firstsfml\firstsfml\ball.cpp(16): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+﻿  Player.cpp
+c:\users\alexa\source\repos\pong\firstsfml\firstsfml\player.cpp(12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\alexa\source\repos\pong\firstsfml\firstsfml\player.cpp(22): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-c:\users\alexa\source\repos\firstsfml\firstsfml\ball.cpp(17): warning C4305: 'argument': truncation from 'double' to 'T'
-          with
-          [
-              T=float
-          ]
-  FirstSFML.vcxproj -> C:\Users\Alexa\source\repos\FirstSFML\Debug\FirstSFML.exe
+c:\users\alexa\source\repos\pong\firstsfml\firstsfml\player.cpp(75): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\alexa\source\repos\pong\firstsfml\firstsfml\player.cpp(81): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\alexa\source\repos\pong\firstsfml\firstsfml\player.cpp(119): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  FirstSFML.vcxproj -> C:\Users\Alexa\source\repos\Pong\FirstSFML\Debug\FirstSFML.exe

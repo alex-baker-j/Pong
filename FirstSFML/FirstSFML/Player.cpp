@@ -11,8 +11,10 @@ Player::Player(int playerNum, int windowHeight, int windowWidth)
 	leftEdge = 0;
 	rightEdge = windowWidth;
 
-	//Set movement to 0
+	//Set movement to 0 and angle to 0
 	movement = sf::Vector2f(0, 0);
+	angle = 0;
+	angleToRotate = 0;
 
 	//player 1
 	if (playerNum == 1) {
@@ -39,6 +41,21 @@ void Player::update(sf::RenderWindow &window) {
 			paddle.move(movement);
 		}
 	}
+
+	//Update rotation
+	if (rotatingLeft) {
+		if (angle > -45) {
+			angle += angleToRotate;
+			paddle.rotate(angleToRotate);
+		}
+	}
+	else if (rotatingRight) {
+		if (angle < 45) {
+			angle += angleToRotate;
+			paddle.rotate(angleToRotate);
+		}
+	}
+	
 	window.draw(paddle);
 }
 
@@ -54,10 +71,28 @@ void Player::moveRight() {
 	movingLeft = false;
 }
 
-void Player::stop() {
+void Player::rotateRight() {
+	angleToRotate = 0.1;
+	rotatingRight = true;
+	rotatingLeft = false;
+}
+
+void Player::rotateLeft() {
+	angleToRotate = -0.1;
+	rotatingLeft = true;
+	rotatingRight = false;
+}
+
+void Player::stopMoving() {
 	movement.x = 0;
 	movingLeft = false;
 	movingRight = false;
+}
+
+void Player::stopRotating() {
+	angleToRotate = 0;
+	rotatingLeft = false;
+	rotatingRight = false;
 }
 
 bool Player::isMovingRight() {
@@ -66,6 +101,22 @@ bool Player::isMovingRight() {
 
 bool Player::isMovingLeft() {
 	return movingLeft;
+}
+
+bool Player::isRotatingLeft() {
+	return rotatingLeft;
+}
+
+bool Player::isRotatingRight() {
+	return rotatingRight;
+}
+
+sf::RectangleShape Player::getPaddle() {
+	return paddle;
+}
+
+float Player::getAngleRadians() {
+	return angle * 3.14159 / 180;
 }
 
 

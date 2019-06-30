@@ -10,9 +10,16 @@ public:
 	void update(sf::RenderWindow &window);
 	void moveLeft();
 	void moveRight();
-	void stop();
+	void rotateRight();
+	void rotateLeft();
+	void stopMoving();
+	void stopRotating();
 	bool isMovingRight();
 	bool isMovingLeft();
+	bool isRotatingRight();
+	bool isRotatingLeft();
+	sf::RectangleShape getPaddle();
+	float getAngleRadians();
 	
 
 
@@ -21,8 +28,12 @@ private:
 	sf::Vector2f movement;
 	bool movingRight = false;
 	bool movingLeft = false;
+	bool rotatingRight = false;
+	bool rotatingLeft = false;
 	float rightEdge;
 	float leftEdge;
 	float paddleWidth;
+	float angle;
+	float angleToRotate;
 };
 

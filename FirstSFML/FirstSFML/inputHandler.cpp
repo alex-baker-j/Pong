@@ -13,6 +13,14 @@ void handleInput(sf::Event input, Player &player1, Player &player2) {
 		else if (input.key.code == sf::Keyboard::D) {
 			player1.moveRight();
 		}
+		//Player 1 rotate right
+		else if (input.key.code == sf::Keyboard::W) {
+			player1.rotateRight();
+		}
+		//Player 1 rotate left
+		else if (input.key.code == sf::Keyboard::S) {
+			player1.rotateLeft();
+		}
 		//Player 2 left
 		else if (input.key.code == sf::Keyboard::J) {
 			player2.moveLeft();
@@ -21,6 +29,15 @@ void handleInput(sf::Event input, Player &player1, Player &player2) {
 		else if (input.key.code == sf::Keyboard::L) {
 			player2.moveRight();
 		}
+		//Player 2 rotate right
+		else if (input.key.code == sf::Keyboard::I) {
+			player2.rotateRight();
+		}
+		//Player 2 rotate left
+		else if (input.key.code == sf::Keyboard::K) {
+			player2.rotateLeft();
+		}
+
 	}
 
 	//Handle key releases
@@ -28,27 +45,48 @@ void handleInput(sf::Event input, Player &player1, Player &player2) {
 		//Player 1 stops when moving left
 		if (input.key.code == sf::Keyboard::A) {
 			if (player1.isMovingLeft()) {
-				player1.stop();
+				player1.stopMoving();
 			}
 		}
 		//Player 1 stops when moving right
 		else if (input.key.code == sf::Keyboard::D) {
 			if (player1.isMovingRight()) {
-				player1.stop();
+				player1.stopMoving();
 			}
 		}
-		
+		//Player 1 stops when rotating right
+		else if (input.key.code == sf::Keyboard::W) {
+			if (player1.isRotatingRight()) {
+				player1.stopRotating();
+			}
+		}
+		//Player1 stops when rotating left
+		else if (input.key.code == sf::Keyboard::S) {
+			if (player1.isRotatingLeft()) {
+				player1.stopRotating();
+			}
+		}
 		//Player 2 stops when moving left
 		else if (input.key.code == sf::Keyboard::J) {
 			if (player2.isMovingLeft()) {
-				player2.stop();
+				player2.stopMoving();
 			}
 		}
 		//Player 2 stops when moving right
 		else if (input.key.code == sf::Keyboard::L) {
 			if (player2.isMovingRight()) {
-				player2.stop();
+				player2.stopMoving();
 			}
+		}
+		//Player 2 stops when rotating right
+		else if (input.key.code == sf::Keyboard::I) {
+			if (player2.isRotatingRight()) {
+				player2.stopRotating();
+			}
+		}
+		//Player2 stops when rotating left
+		else if (input.key.code == sf::Keyboard::K) {
+			player2.stopRotating();
 		}
 	}
 

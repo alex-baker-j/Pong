@@ -38,7 +38,7 @@ int main(){
 		window.clear();
 		player1.update(window);
 		player2.update(window);
-		gameBall.update(window);
+		gameBall.update(window, player1, player2);
 		window.display();
 	}
 }
